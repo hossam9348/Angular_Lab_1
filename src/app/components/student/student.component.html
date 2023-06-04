@@ -1,0 +1,27 @@
+<div>
+    <div class="container text-center p-5">
+        <input type="text" placeholder="Enter Student Name" class="form-control" style="background-color:whitesmoke;" [(ngModel)]="name">
+        <p style="color:red;" *ngIf="flagName">Student name is required, must be string and more than 3 characters</p>
+        <input type="number" placeholder="Enter S.Age" class="form-control" style="background-color:whitesmoke;" [(ngModel)]="age">
+        <p style="color:red;" *ngIf="flagAge">Student age is required and more than 18 years</p>
+        <button class="btn btn-dark" (click)="add()">Add Student</button >
+    </div>
+    <div class="container p-5">
+       <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Student of Students;">
+            <td>{{ Student.id }}</td>
+            <td>{{ Student.name }}</td>
+            <td>{{ Student.age }}</td>
+          </tr>
+        </tbody>
+       </table>
+    </div>
+</div>

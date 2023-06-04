@@ -1,0 +1,21 @@
+<div class="text-light text-center p-5 bg-dark">
+    <h3 class="m-5 ">Todo App</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+            <input type="text" placeholder="enter your task" class="form-control" [(ngModel)]="inputValue">
+        </div>
+        <div class="col-4">
+            <button class="btn btn-warning" (click)="add()">Add to list</button>
+        </div>
+      </div>
+      <div class="row mt-4" *ngFor="let todo of todoList; let i = index">
+        <div class="col-8">
+            <p  class="bg-light p-1 text-dark rouded" >{{ todo }}</p>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-danger" (click)="remove(i)">Remove</button>
+        </div>
+      </div>
+    </div>
+</div>
